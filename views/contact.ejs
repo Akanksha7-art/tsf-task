@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+    <div class="container">
+        </br>
+        <div class="text-center" style="font-size: larger;">
+            <h2>Money Transfer</h2>
+            </br>
+            </h2>
+        </div>
+        <form class="form" action="/transaction/<%=current %>" method="POST">
+            <div class="row">
+                <div class="col-4">
+                    <label for="balance">Amount to be Transferred</label>
+                </div>
+                <div class="form-group"><input type="text" placeholder="Amount" name="balance" id="balance" required></div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="balance">Receipient Name</label>
+                </div>
+                <div class="form-group col-6" style="box-sizing: border-box;"><select name="name">
+                <option>-Select-</option>
+        <% users.forEach((user)=> { %>  
+        <option value="<%= user._id %>">
+                <%= user.Name %>
+            </option>
+            <% }) %>
+        </select>
+                </div>
+            </div>
+            <div class="row form-group text-center">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+    <%- include("partials/footer.ejs") %>

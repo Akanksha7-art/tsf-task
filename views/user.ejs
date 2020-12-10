@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+    <h2 class="text-center">Customer Details</h2>
+    <div class="container">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        Customer Name
+                    </td>
+                    <td>
+                        <%= user.Name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <%= user.Email %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mobile Number
+                    </td>
+                    <td>
+                        <%= user.Phone %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Balance
+                    </td>
+                    <td>
+                        <%= user.Balance %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-6"><a href="/transaction/<%= user._id %>">Transfer Amount</a></div>
+            <div class="col-6 col-lg-offset-2"><a href="/home">Home </a></div>
+        </div>
+    </div>
+    <%- include("partials/footer.ejs") %>

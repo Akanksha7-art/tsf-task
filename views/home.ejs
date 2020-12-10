@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+    </br>
+    <h1 class="text-center">Contacts-List</h1>
+    </br>
+    <div class="container">
+        <div>
+            <% users.forEach((user)=> { %>
+                <h2 class="text-center" style="box-shadow: blueviolet; box-sizing: initial;">
+                    <a href="/d/<%= user._id %>">
+                        <%= user.Name %>
+                    </a>
+                </h2>
+                <%  }) %>
+        </div>
+        <div>
+            <a href="/history">Transactions</a>
+        </div>
+    </div>
+    <%- include("partials/footer.ejs") %>

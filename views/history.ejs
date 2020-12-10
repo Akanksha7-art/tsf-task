@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+    <div class="container" id="history-page">
+        <h2 class="text-center">Transactions</h2>
+        <table class="table table-bordered" style="border: 1px solid black;">
+            <tbody>
+                <tr>
+                    <td>
+                        Sender
+                    </td>
+                    <td>
+                        Receiver 
+                    </td>
+                    <td>
+                        Amount
+                    </td>
+                    <td>
+                        Time
+                    </td>
+                </tr>
+                <% history.forEach((history)=> { %>
+                    <tr>
+                        <td>
+                            <%= history.Creditor %>
+                        </td>
+                        <td>
+                            <%= history.Receipent %>
+                        </td>
+                        <td>
+                            <%= history.Amount %>
+                        </td>
+                        <td>
+                            <%= history.Time %>
+                        </td>
+                    </tr>
+                    <%  }) %>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-6"><a href="/">Home</a></div>
+            <div class="col-6 col-offset-2"><a href="/home">Contacts</a></div>
+        </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
